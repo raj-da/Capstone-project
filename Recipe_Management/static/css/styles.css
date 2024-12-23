@@ -1,0 +1,95 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    min-height: 100vh;
+}
+
+/* Container for Forms */
+form {
+    margin: auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Input Fields and Buttons */
+input, button {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Links */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #495057;
+}
+
+/* Profile Page Styles */
+p {
+    font-size: 1rem;
+    margin: 5px 0;
+    text-align: center;
+}
+
+#register {
+    display: block;
+    margin: auto;
+    color: black;
+
+}
+
+/* #login {
+    display: block;
+    margin: auto;
+    transition: background-color 0.3s eace;
+    max-width: 380px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+#login:hover{
+    background-color: #0056b3;
+}
+
+#login a {
+    color: white;
+} */

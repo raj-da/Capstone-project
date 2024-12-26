@@ -24,7 +24,7 @@ class Recipe(models.Model):
         return self.title
 
 
-# 
+# ingredient model
 class Ingredient(models.Model):
     name = models.CharField(max_length=100)
     recipes = models.ManyToManyField(Recipe, related_name='ingredients')

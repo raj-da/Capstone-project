@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('users.urls')),
     path('api/', include('api.urls')),
+    path('api-auth/', include('rest_framework.urls')), # For logging in using the api page
 ]

@@ -2,6 +2,9 @@ from rest_framework import generics
 from recipes import models
 from . import serializer
 
+class RegisterUser(generics.CreateAPIView):
+    serializer_class = serializer.UserSerializer
+
 class CreateRecipe(generics.CreateAPIView):
     serializer_class = serializer.RecpieSerializer
 

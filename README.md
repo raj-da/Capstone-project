@@ -61,7 +61,6 @@ This document outlines the planned API endpoints for the Recipe Management API.
 ```json
 {
   "token": "abcd1234xyz",
-  "message": "Login successful"
 }
 ```
 
@@ -70,7 +69,7 @@ This document outlines the planned API endpoints for the Recipe Management API.
 ## **Recipe Management Endpoints**
 
 ### **1. Create a New Recipe**
-**Endpoint:** `POST /recipes`
+**Endpoint:** `POST api/create/`
 
 **Description:** Allows authenticated users to create a new recipe.
 
@@ -78,7 +77,7 @@ This document outlines the planned API endpoints for the Recipe Management API.
 - `title` (string, required): The name of the recipe.
 - `ingredients` (array of strings, required): A list of ingredients.
 - `instructions` (string, required): The steps to prepare the recipe.
-- `categories` (array of strings, optional): Categories associated with the recipe.
+- `categories` 
 
 **Sample Request:**
 ```json
@@ -107,7 +106,7 @@ This document outlines the planned API endpoints for the Recipe Management API.
 ---
 
 ### **2. Retrieve All Recipes**
-**Endpoint:** `GET /recipes`
+**Endpoint:** `GET api/recipes/`
 
 **Description:** Retrieves a list of all available recipes.
 
@@ -132,7 +131,7 @@ This document outlines the planned API endpoints for the Recipe Management API.
 ---
 
 ### **3. Retrieve a Recipe by ID**
-**Endpoint:** `GET /recipes/<id>`
+**Endpoint:** `GET api/recipes/<id>`
 
 **Description:** Retrieves the details of a specific recipe by its ID.
 
@@ -153,7 +152,7 @@ This document outlines the planned API endpoints for the Recipe Management API.
 ---
 
 ### **4. Update a Recipe by ID**
-**Endpoint:** `PUT /recipes/<id>`
+**Endpoint:** `PUT api/update/<id>`
 
 **Description:** Updates an existing recipe by its ID.
 
@@ -162,9 +161,9 @@ This document outlines the planned API endpoints for the Recipe Management API.
 
 **Request Parameters:**
 - `title` (string, optional): Updated title for the recipe.
-- `ingredients` (array of strings, optional): Updated list of ingredients.
+- `ingredients` (strings, optional): Updated list of ingredients.
 - `instructions` (string, optional): Updated instructions.
-- `categories` (array of strings, optional): Updated categories.
+- `categories`
 
 **Sample Request:**
 ```json
@@ -172,7 +171,7 @@ This document outlines the planned API endpoints for the Recipe Management API.
   "title": "Spaghetti Carbonara Deluxe",
   "ingredients": ["spaghetti", "eggs", "parmesan cheese", "bacon", "cream"],
   "instructions": "Boil spaghetti. Cook bacon. Mix eggs, cheese, and cream. Combine everything.",
-  "categories": ["Italian", "Dinner"]
+  "categories": ["Chinese"]
 }
 ```
 
@@ -185,7 +184,7 @@ This document outlines the planned API endpoints for the Recipe Management API.
     "title": "Spaghetti Carbonara Deluxe",
     "ingredients": ["spaghetti", "eggs", "parmesan cheese", "bacon", "cream"],
     "instructions": "Boil spaghetti. Cook bacon. Mix eggs, cheese, and cream. Combine everything.",
-    "categories": ["Italian", "Dinner"]
+    "categories": ["Chinese"]
   }
 }
 ```
@@ -193,7 +192,7 @@ This document outlines the planned API endpoints for the Recipe Management API.
 ---
 
 ### **5. Delete a Recipe by ID**
-**Endpoint:** `DELETE /recipes/<id>`
+**Endpoint:** `DELETE api/delete/<id>`
 
 **Description:** Deletes a specific recipe by its ID.
 
@@ -211,34 +210,13 @@ This document outlines the planned API endpoints for the Recipe Management API.
 
 ## **Filtered Viewing Endpoints**
 
-### **1. Retrieve Recipes by Category**
-**Endpoint:** `GET /recipes/category/<category>`
+### **1. Retrieve Recipes by Publisher**
+**Endpoint:** `GET /api/filter/<pk>`
 
-**Description:** Retrieves recipes filtered by a specific category.
-
-**Path Parameter:**
-- `<category>` (string, required): The category to filter recipes by.
-
-**Sample Response:**
-```json
-[
-  {
-    "id": 1,
-    "title": "Spaghetti Carbonara",
-    "categories": ["Italian", "Dinner"]
-  }
-]
-```
-
----
-
-### **2. Retrieve Recipes by Ingredient**
-**Endpoint:** `GET /recipes/ingredient/<ingredient>`
-
-**Description:** Retrieves recipes filtered by a specific ingredient.
+**Description:** Retrieves recipes filtered by a specific publisher.
 
 **Path Parameter:**
-- `<ingredient>` (string, required): The ingredient to filter recipes by.
+- `<pk>` (intiger, required): The publisher id to filter recipes by.
 
 **Sample Response:**
 ```json

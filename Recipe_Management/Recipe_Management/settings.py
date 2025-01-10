@@ -135,7 +135,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-# Project level permissions
+# Project level permissions and authentication
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',

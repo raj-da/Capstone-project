@@ -48,7 +48,16 @@ class UpdateView(generics.RetrieveUpdateAPIView):
 
 # api view to delete a post
 class DeleteView(generics.RetrieveDestroyAPIView):
-    permission_classes = [UpdateDeletePermission, IsAuthenticated]
+    permission_classes = [UpdateDeletePermission]
     queryset = models.Recipe.objects.all()
     serializer_class = serializer.RecpieSerializer
 
+
+# to filter the posts
+class FilterView(generics.ListAPIView):
+    permission_classes = [IsAuthenticated]
+    serializer_class = serializer.RecpieSerializer
+
+    def get_queryset(self):
+        pk = self.kwargs.get('pk')
+        return models.Recipe.objects.filter(user_id = pk)
